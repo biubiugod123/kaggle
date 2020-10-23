@@ -24,3 +24,14 @@ train_data.head()
 #third code cell
 test_data = pd.read_csv("/kaggle/input/titanic/test.csv")
 test_data.head()
+
+#women survived
+women = train_data.loc[train_data.Sex == 'female']['Survived']
+rate_women = sum(women)/len(women)
+print("% of women who survived:",rate_women)
+
+#men Survived
+men = train_data.loc[train_data.Sex == 'male']["Survived"]
+rate_men = sum(men)/len(men)
+
+print("% of men who survived:", rate_men)
